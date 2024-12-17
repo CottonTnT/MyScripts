@@ -26,6 +26,7 @@ parser.add_argument("src_path",
 args = parser.parse_args()
 
 is_forced = args.is_forced
+
 dst_path = os.path.join(os.path.expanduser(args.dst_path), ".clang-format")
 src_path = os.path.expanduser(args.src_path)
 
@@ -39,6 +40,7 @@ if os.path.exists(dst_path):
         exit()
     else:
         os.remove(dst_path)
+
 os.symlink(src_path, dst_path)
 
 
